@@ -25,8 +25,8 @@
     "uuid": "961aac5e-5f87-4439-98e5-03867edefe32"
   },
   "engines": {
-    "node": "16.18.0",
-    "npm": "8.19.2"
+    "node": "18.16.0",
+    "npm": "9.6.5"
   },
   "workspaces": [],
   "license": "MIT"
