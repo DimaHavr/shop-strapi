@@ -1,5 +1,5 @@
 {
-  "name": "shop-strapi",
+  "name": "my-project",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -10,22 +10,24 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.14.4",
-    "@strapi/plugin-users-permissions": "4.14.4",
-    "@strapi/provider-upload-cloudinary": "^4.14.4",
-    "@strapi/strapi": "4.14.4",
-    "pg": "8.8.0",
-    "strapi": "^3.6.11"
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.7",
+    "@sklinet/strapi-plugin-tinymce": "^1.0.6",
+    "@strapi/plugin-i18n": "^4.12.0",
+    "@strapi/plugin-users-permissions": "^4.12.0",
+    "@strapi/provider-upload-cloudinary": "^4.12.0",
+    "@strapi/strapi": "^4.12.0",
+    "pg": "^8.11.1"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "2c866651-a64a-449c-a67b-2a3c6974d102"
+    "uuid": "961aac5e-5f87-4439-98e5-03867edefe32"
   },
   "engines": {
     "node": "16.18.0",
-    "npm": ">=6.0.0"
+    "npm": "8.19.2"
   },
+  "workspaces": [],
   "license": "MIT"
 }
