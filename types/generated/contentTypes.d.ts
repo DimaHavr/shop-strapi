@@ -759,6 +759,43 @@ export interface ApiColorColor extends Schema.CollectionType {
   };
 }
 
+export interface ApiOrderOrder extends Schema.CollectionType {
+  collectionName: 'orders';
+  info: {
+    singularName: 'order';
+    pluralName: 'orders';
+    displayName: 'Order';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    order_id: Attribute.String;
+    article_number: Attribute.String;
+    drop_shop_name: Attribute.String;
+    personal_data: Attribute.String;
+    delivery_data: Attribute.String;
+    paymant_data: Attribute.String;
+    order_subtotal: Attribute.String;
+    product_list: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -799,6 +836,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'Product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -844,6 +882,8 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'oneToMany',
       'api::review.review'
     >;
+    drop_shop_name: Attribute.String;
+    article_number: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1027,6 +1067,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
       'api::color.color': ApiColorColor;
+      'api::order.order': ApiOrderOrder;
       'api::page.page': ApiPagePage;
       'api::product.product': ApiProductProduct;
       'api::review.review': ApiReviewReview;

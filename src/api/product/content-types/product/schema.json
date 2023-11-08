@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "Product"
+    "displayName": "Product",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,12 +33,12 @@
       "default": false
     },
     "img": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "category": {
       "type": "relation",
@@ -74,6 +75,12 @@
       "relation": "oneToMany",
       "target": "api::review.review",
       "mappedBy": "product"
+    },
+    "drop_shop_name": {
+      "type": "string"
+    },
+    "article_number": {
+      "type": "string"
     }
   }
 }
