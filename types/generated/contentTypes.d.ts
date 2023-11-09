@@ -736,9 +736,9 @@ export interface ApiColorColor extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    product: Attribute.Relation<
+    products: Attribute.Relation<
       'api::color.color',
-      'manyToOne',
+      'manyToMany',
       'api::product.product'
     >;
     createdAt: Attribute.DateTime;
@@ -867,14 +867,9 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'manyToOne',
       'api::subcategory.subcategory'
     >;
-    sizes: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::size.size'
-    >;
     colors: Attribute.Relation<
       'api::product.product',
-      'oneToMany',
+      'manyToMany',
       'api::color.color'
     >;
     reviews: Attribute.Relation<
@@ -884,6 +879,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     drop_shop_name: Attribute.String;
     article_number: Attribute.String;
+    sizes: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::size.size'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -954,9 +954,9 @@ export interface ApiSizeSize extends Schema.CollectionType {
   };
   attributes: {
     size: Attribute.String & Attribute.Required;
-    product: Attribute.Relation<
+    products: Attribute.Relation<
       'api::size.size',
-      'manyToOne',
+      'manyToMany',
       'api::product.product'
     >;
     createdAt: Attribute.DateTime;

@@ -58,17 +58,11 @@
       "target": "api::subcategory.subcategory",
       "inversedBy": "products"
     },
-    "sizes": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::size.size",
-      "mappedBy": "product"
-    },
     "colors": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::color.color",
-      "mappedBy": "product"
+      "mappedBy": "products"
     },
     "reviews": {
       "type": "relation",
@@ -81,6 +75,12 @@
     },
     "article_number": {
       "type": "string"
+    },
+    "sizes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::size.size",
+      "mappedBy": "products"
     }
   }
 }
