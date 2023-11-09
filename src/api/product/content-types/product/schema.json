@@ -36,7 +36,9 @@
       "type": "media",
       "multiple": true,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "category": {
       "type": "relation",
@@ -76,9 +78,9 @@
     },
     "sizes": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::size.size",
-      "inversedBy": "products"
+      "mappedBy": "product"
     }
   }
 }

@@ -16,11 +16,11 @@
       "type": "string",
       "required": true
     },
-    "products": {
+    "product": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "manyToOne",
       "target": "api::product.product",
-      "mappedBy": "sizes"
+      "inversedBy": "sizes"
     }
   }
 }
