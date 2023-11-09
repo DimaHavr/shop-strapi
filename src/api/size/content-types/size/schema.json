@@ -13,8 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "size": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "products": {
       "type": "relation",

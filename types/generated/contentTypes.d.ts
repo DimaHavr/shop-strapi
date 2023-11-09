@@ -953,7 +953,7 @@ export interface ApiSizeSize extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    size: Attribute.String & Attribute.Required;
+    size: Attribute.String;
     products: Attribute.Relation<
       'api::size.size',
       'manyToMany',
