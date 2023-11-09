@@ -881,7 +881,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     article_number: Attribute.String;
     sizes: Attribute.Relation<
       'api::product.product',
-      'oneToMany',
+      'manyToMany',
       'api::size.size'
     >;
     createdAt: Attribute.DateTime;
@@ -954,9 +954,9 @@ export interface ApiSizeSize extends Schema.CollectionType {
   };
   attributes: {
     size: Attribute.String & Attribute.Required;
-    product: Attribute.Relation<
+    products: Attribute.Relation<
       'api::size.size',
-      'manyToOne',
+      'manyToMany',
       'api::product.product'
     >;
     createdAt: Attribute.DateTime;

@@ -78,9 +78,9 @@
     },
     "sizes": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::size.size",
-      "mappedBy": "product"
+      "mappedBy": "products"
     }
   }
 }
