@@ -13,13 +13,14 @@
   "pluginOptions": {},
   "attributes": {
     "size": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "products": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product",
-      "inversedBy": "sizes"
+      "mappedBy": "sizes"
     }
   }
 }
